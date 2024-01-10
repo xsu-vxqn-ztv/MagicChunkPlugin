@@ -1,0 +1,37 @@
+# DO NOT EDIT #
+version: 1.0.0
+###############
+
+# The item to spawn on its own
+dropped-item:
+  ==: org.bukkit.inventory.ItemStack
+  type: DIAMOND
+  amount: 1
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    display-name: "&cEpic Diamond"
+    lore:
+      - "&7A pretty cool diamond for a pretty cool plugin."
+      - "&7Made with love by _xsu_ (vXqN)."
+
+# Whether the item should have an enchantment-style glow
+item-glows: true
+
+# Percent chance that the given item will spawn in a chunk (0 to 1.0)
+spawn-chance: 1.0
+
+# The amount of time, in seconds, for said item to despawn
+despawn-time: 60
+
+# If enabled, items will spawn "levitating" above fluids
+allow-fluid-spawns: true
+
+# If enabled, items will spawn in the end
+allow-end-spawns: true
+
+# If enabled, items will spawn in the nether
+allow-nether-spawns: true
+
+# Enable logging of the item to console
+logs-enabled: true
