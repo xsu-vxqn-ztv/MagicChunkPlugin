@@ -272,7 +272,8 @@ public class MagicChunkListener implements Listener {
 
                 if (config.isIncludesLogs())
                     logger.info(String.format(
-                            "Generated a dropped item at %s with coordinates (%.0f, %.0f, %.0f)!",
+                            "Generated a %s at %s with coordinates (%.0f, %.0f, %.0f)!",
+                            item.getType(),
                             world,
                             blockLocation.getX(),
                             blockLocation.getY(),
@@ -300,7 +301,8 @@ public class MagicChunkListener implements Listener {
                     if (config.isIncludesLogs()) {
                         Location loc = item.getLocation();
                         logger.info(String.format(
-                                "Despawned a generated item at %s with coordinates (%.0f, %.0f, %.0f)!",
+                                "Despawned a %s at %s with coordinates (%.0f, %.0f, %.0f)!",
+                                item.getType(),
                                 loc.getWorld(),
                                 loc.getX(),
                                 loc.getY(),
