@@ -1,14 +1,9 @@
 package org.xsu.magicchunkloader;
 
-import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.enchantments.Enchantment;
-import org.bukkit.inventory.ItemFlag;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.plugin.java.JavaPlugin;
-
-import java.util.Locale;
-import java.util.Objects;
 import java.util.logging.Logger;
+
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.plugin.java.JavaPlugin;
 
 public final class MagicChunkLoader extends JavaPlugin {
 

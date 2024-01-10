@@ -1,15 +1,15 @@
 package org.xsu.magicchunkloader;
 
-import org.bukkit.ChatColor;
-import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.enchantments.Enchantment;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.ItemFlag;
-import org.bukkit.inventory.meta.ItemMeta;
-
+import java.util.stream.Collectors;
 import java.util.List;
 import java.util.logging.Logger;
-import java.util.stream.Collectors;
+
+import org.bukkit.ChatColor;
+import org.bukkit.enchantments.Enchantment;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.inventory.ItemFlag;
+import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.inventory.ItemStack;
 
 public class MagicChunkConfig {
 

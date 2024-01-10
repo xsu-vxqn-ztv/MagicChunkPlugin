@@ -1,6 +1,17 @@
 package org.xsu.magicchunkloader;
 
-import org.bukkit.*;
+import java.util.Random;
+import java.util.Set;
+import java.util.logging.Logger;
+
+import org.bukkit.Bukkit;
+import org.bukkit.Chunk;
+import org.bukkit.ChunkSnapshot;
+import org.bukkit.FluidCollisionMode;
+import org.bukkit.HeightMap;
+import org.bukkit.Location;
+import org.bukkit.Material;
+import org.bukkit.World;
 import org.bukkit.block.Biome;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Item;
@@ -8,14 +19,9 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.world.ChunkPopulateEvent;
-import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
-
-import java.util.Random;
-import java.util.Set;
-import java.util.logging.Logger;
 
 public class MagicChunkListener implements Listener {
 
@@ -57,9 +63,7 @@ public class MagicChunkListener implements Listener {
             Block surfaceBlock = randomSurfaceBlockAt(world, minX, maxX, minZ, maxZ);
 
             // Process block checks and spawning on the main thread
-            Bukkit.getScheduler().runTask(plugin, () -> {
-                processBlockAndSpawn(world, surfaceBlock);
-            });
+            Bukkit.getScheduler().runTask(plugin, () -> processBlockAndSpawn(world, surfaceBlock));
         });
     }
 
@@ -103,7 +107,7 @@ public class MagicChunkListener implements Listener {
 
             // Usually, there are surface level structures from the ceiling down,
             // hence, in an oxymoronic way, we will "ray-cast" until we hit air.
-            // Then, we actually raycast down from the netherCeilingBlock to a "surface" block
+            // Then, we actually ray-cast down from the netherCeilingBlock to a "surface" block
             // Note: This surface block can be lava, and will be validated by later functions
             return findViableBlockInStructures(world, netherCeilingBlock);
         }
@@ -215,7 +219,7 @@ public class MagicChunkListener implements Listener {
      * (e.g., non-leaf, non-wood, or non-fluid) to ascertain its viability.
      *
      * @param block The block to check for viability.
-     * @return true if the block meets the viability criteria, false otherwise.
+     * @return Viability an enum representing the viability of the block to spawn an item
      */
     private Viability isViableBlock(Block block) {
         // Quick edge-case
