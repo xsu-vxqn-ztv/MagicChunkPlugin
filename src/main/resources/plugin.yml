@@ -2,4 +2,4 @@ name: MagicChunkLoader
 version: '${project.version}'
 main: org.xsu.magicchunkloader.MagicChunkLoader
 api-version: '1.20'
-load: STARTUP
+load: POSTWORLD
